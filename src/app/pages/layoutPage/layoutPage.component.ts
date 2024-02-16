@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SideBarComponent } from '../../shared/components/sideBar/sideBar.component';
 import { CardComponent } from '../../shared/components/card/card.component';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-layout-page',
@@ -16,4 +17,10 @@ import { CardComponent } from '../../shared/components/card/card.component';
   templateUrl: './layoutPage.component.html',
   styleUrl: './layoutPage.component.css',
 })
-export class LayoutPageComponent { }
+export class LayoutPageComponent {
+  private userService = inject(UserService);
+
+  logOut(){
+    return this.userService.logOut();
+  }
+}

@@ -23,8 +23,8 @@ export class LogInComponent {
 
   constructor(){
     this.newLogin = new FormGroup({
-      username: new FormControl( null, Validators.required ),
-      password: new FormControl( null, Validators.required)
+      username: new FormControl( "mor_2314", Validators.required ),
+      password: new FormControl( "83r5^_", Validators.required)
     })
   }
 
